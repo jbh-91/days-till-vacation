@@ -1,0 +1,24 @@
+{
+       "EN": {
+              "day": "day",
+              "days": "days",
+              "a week": "a week",
+              "weeks": "weeks",
+              "in total": "in total",
+              "less than": "less than",
+              "left": "left",
+              "and": "and",
+              "or": "or"
+       },
+       "DE": {
+              "day": "Tag",
+              "days": "Tage",
+              "a week": "eine Woche",
+              "weeks": "Wochen",
+              "in total": "insgesamt",
+              "less than": "weniger als",
+              "left": "verbleibend",
+              "and": "und",
+              "or": "oder"
+              }
+}
