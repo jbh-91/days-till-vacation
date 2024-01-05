@@ -2,9 +2,9 @@ from datetime import date, timedelta
 from json import load
 import os.path
 
-# TODO: Catch and rephrase string info for vacation, that's already in the past
+# TODO: Catch and rephrase string info for vacation that's already in the past
 
-def get_days_left(year_of_vacation: int, month_of_vacation: int, day_of_vacation: int) -> int:
+def get_days_delta(year_of_vacation: int, month_of_vacation: int, day_of_vacation: int) -> int:
     
     today: date = date.today()
     vacation_date: date = date(year_of_vacation, month_of_vacation, day_of_vacation)
@@ -13,18 +13,18 @@ def get_days_left(year_of_vacation: int, month_of_vacation: int, day_of_vacation
 
     return delta.days
 
-def get_weeks_left(year_of_vacation: int, month_of_vacation: int, day_of_vacation: int) -> int:
+def get_weeks_delta(year_of_vacation: int, month_of_vacation: int, day_of_vacation: int) -> int:
     
-    days_left: int = get_days_left(year_of_vacation, month_of_vacation, day_of_vacation)
+    days_left: int = get_days_delta(year_of_vacation, month_of_vacation, day_of_vacation)
 
     return days_left // 7
 
 def days_and_weeks_left(year_of_vacation: int, month_of_vacation: int, day_of_vacation: int,
                         translation: str = "EN") -> str:
     
-    days_left: int = get_days_left(year_of_vacation, month_of_vacation, day_of_vacation)
+    days_left: int = get_days_delta(year_of_vacation, month_of_vacation, day_of_vacation)
     single_days_left: int = days_left % 7
-    weeks_left: int = get_weeks_left(year_of_vacation, month_of_vacation, day_of_vacation)
+    weeks_left: int = get_weeks_delta(year_of_vacation, month_of_vacation, day_of_vacation)
 
     expression: list = []
 
@@ -56,7 +56,7 @@ def days_and_weeks_left(year_of_vacation: int, month_of_vacation: int, day_of_va
         expression.append(f" {translate('days')}")
     else:
         expression.append(f" {single_days_left}")
-        expression.append(f" {translate('days')}")
+        expression.append(f" {translate('day')}")
     
     expression.append(f" {translate('left')}")
 
@@ -64,4 +64,4 @@ def days_and_weeks_left(year_of_vacation: int, month_of_vacation: int, day_of_va
 
 
 if __name__ == "__main__":
-    print(days_and_weeks_left(2024, 2, 9, "DE"))
+    print(days_and_weeks_left(2024, 5, 6, "DE"))
