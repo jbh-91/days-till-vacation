@@ -64,4 +64,4 @@ def days_and_weeks_left(year_of_vacation: int, month_of_vacation: int, day_of_va
 
 
 if __name__ == "__main__":
-    print(days_and_weeks_left(2024, 5, 6, "DE"))
+    print(days_and_weeks_left(2024, 3, 12, "DE"))
