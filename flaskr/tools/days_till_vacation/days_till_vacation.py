@@ -28,7 +28,7 @@ def days_and_weeks_left(year_of_vacation: int, month_of_vacation: int, day_of_va
 
     expression: list = []
 
-    with open(os.path.dirname(__file__) + "/../../data/translations.json") as f:
+    with open(os.path.dirname(__file__) + "/../../static/translations.json") as f:
         translations = load(f)
 
     translate: function = lambda word: translations[translation][word]
