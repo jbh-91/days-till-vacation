@@ -10,6 +10,9 @@
     <input name="title" id="title" value="{{ request.form['title'] }}" required>
     <label for="body">Body</label>
     <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-    <input type="submit" value="Save">
+    <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0" type="submit" value="Save">
+      <i class="fa-solid fa-floppy-disk mr-1"></i>
+      Save
+    </button>
   </form>
 {% endblock %}

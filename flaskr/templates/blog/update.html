@@ -11,10 +11,16 @@
       value="{{ request.form['title'] or post['title'] }}" required>
     <label for="body">Body</label>
     <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
-    <input type="submit" value="Save">
+    <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0" type="submit" value="Save">
+      <i class="fa-solid fa-floppy-disk mr-1"></i>
+      Save
+    </button>
   </form>
   <hr>
   <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
-    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+    <button class="inline-flex items-center bg-red-200 border-0 py-1 px-3 focus:outline-none hover:bg-red-400 rounded text-base text-red-600 mt-4 md:mt-0" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+      <i class="fa-solid fa-trash-can mr-1"></i>
+      Delete
+    </button>
   </form>
 {% endblock %}
