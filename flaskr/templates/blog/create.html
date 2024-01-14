@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}New Post{% endblock %}</h1>
+  <h1 class="text-2xl">{% block title %}New Post{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-    <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0" type="submit" value="Save">
+  <form method="post" class="flex flex-col space-y-4">
+    <label for="title" class="text-lg">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}"  class="p-5 border border-gray-300" required>
+    <label for="body" class="text-lg">Body</label>
+    <textarea name="body" id="body" class="p-5 border border-gray-300 resize-y" >{{ request.form['body'] }}</textarea>
+    <button class="mr-auto items-center bg-gray-200 shadow-md border-0 py-1 px-3 focus:outline-none hover:bg-green-300 hover:shadow-lg hover:shadow-green-300 rounded text-base mt-4 md:mt-0" type="submit" value="Save">
       <i class="fa-solid fa-floppy-disk mr-1"></i>
       Save
     </button>

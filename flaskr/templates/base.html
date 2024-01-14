@@ -10,7 +10,7 @@
   <section class="text-gray-600 bg-gray-100 body-font">
     <nav class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
-        <h1 class="md:ml-3 text-xl">Flaskr</h1>
+        <h1 class="text-xl">Flaskr</h1>
       </a>
       <div class="md:ml-auto flex flex-wrap items-center text-base justify-center">
         <a class="md:mr-5 hover:text-gray-900" href="#">Vacation</a>
@@ -20,21 +20,21 @@
           <span>{{ g.user['username'] }}</span>
           <i class="fa-solid fa-user ml-1"></i>
         </p>
-        <a href="{{ url_for('auth.logout') }}"  class="md:mr-5 hover:text-gray-900">
-          <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0">
+        <a href="{{ url_for('auth.logout') }}"  class="hover:text-gray-900">
+          <button class="inline-flex items-center bg-gray-200 shadow-md border-0 py-1 px-3 focus:outline-none hover:bg-red-300 hover:shadow-lg hover:shadow-red-300 rounded text-base mt-4 md:mt-0">
             Log Out
             <i class="fa-solid fa-right-from-bracket ml-1"></i>
           </button>
         </a>
       {% else %}
         <a href="{{ url_for('auth.register') }}"  class="md:mr-5 hover:text-gray-900">
-          <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0">
+          <button class="inline-flex items-center bg-gray-200 shadow-md border-0 py-1 px-3 focus:outline-none hover:bg-indigo-300 hover:shadow-lg hover:shadow-indigo-300 rounded text-base mt-4 md:mt-0">
             Register
             <i class="fa-solid fa-user-plus ml-1"></i>
           </button>
         </a>
         <a href="{{ url_for('auth.login') }}"  class="md:mr-5 hover:text-gray-900">
-          <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-400 rounded text-base mt-4 md:mt-0">
+          <button class="inline-flex items-center bg-gray-200 shadow-md border-0 py-1 px-3 focus:outline-none hover:bg-green-300 hover:shadow-lg hover:shadow-green-300 rounded text-base mt-4 md:mt-0">
             Log In
             <i class="fa-solid fa-right-to-bracket ml-1"></i>
           </button>
@@ -43,7 +43,7 @@
     </nav>
   </section>
   <section class="container mx-auto flex flex-grow p-5 flex-col items-top">
-    <header class="flex flex-row">
+    <header class="flex flex-row my-3">
       {% block header %}{% endblock %}
     </header>
     {% for message in get_flashed_messages() %}
